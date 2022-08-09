@@ -14,15 +14,25 @@ namespace IsStringSentence
         {
             Text = newWord;
         }
-
+        
+        /// <summary>
+        /// Checks if header is ok (starts with a capital letter,
+        /// consists of only letters or only intigers). May have comma 
+        /// at the end.
+        /// </summary>
+        /// <returns>True if the header is ok, otherwise false.</returns>
+        /// <exception cref="NotImplementedException"></exception>
         public bool IsHeaderOk()
         {
-            // tutaj czy Text jest z dużej litery, jakaś metoda, która sprawdza, czy wyraz jest okej (nie ma przerywników w środku, albo jest z samych liter lub cyfr)
             // TODO: dodać README.md
-
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Checks if the word is ok (has only letters or only numbers)
+        /// word is ok when comma is at the end.
+        /// </summary>
+        /// <returns>True it word is ok, otherwise false.</returns>
         public bool IsWordOk()
         {
             if (int.TryParse(Text[0].ToString(), out _))  // when the string is a number
@@ -35,6 +45,12 @@ namespace IsStringSentence
             }
         }
 
+        /// <summary>
+        /// Checks if a word consists of only letters
+        /// word with comma at the end is ok.
+        /// </summary>
+        /// <param name="word">Word to check.</param>
+        /// <returns>True if word is ok, otherwise false.</returns>
         private static bool CheckIfWordOk(string word)
         {
             int okCounter = 0;
@@ -53,6 +69,12 @@ namespace IsStringSentence
             else { return false; }
         }
 
+        /// <summary>
+        /// Checks if a word consists of only intigers
+        /// word with comma at the end is ok.
+        /// </summary>
+        /// <param name="word">Word to check.</param>
+        /// <returns>True if word is ok, otherwise false.</returns>
         private static bool CheckIfNumberOk(string word)
         {
             int okCounter = 0;
