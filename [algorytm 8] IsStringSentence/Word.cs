@@ -8,8 +8,15 @@ namespace IsStringSentence
 {
     internal class Word
     {
+        /// <summary>
+        /// String which makes the word
+        /// </summary>
         public string Text { get; set; }
 
+        /// <summary>
+        /// Constructor of Word class.
+        /// </summary>
+        /// <param name="newWord">String which makes the word.</param>
         public Word(string newWord)
         {
             Text = newWord;
@@ -21,11 +28,17 @@ namespace IsStringSentence
         /// at the end.
         /// </summary>
         /// <returns>True if the header is ok, otherwise false.</returns>
-        /// <exception cref="NotImplementedException"></exception>
         public bool IsHeaderOk()
         {
-            // TODO: dodać README.md
-            throw new NotImplementedException();
+            if (int.TryParse(Text[0].ToString(), out _))  // when the string is a number
+            {
+                return CheckIfNumberOk(Text);
+            }
+            if (Text[0] >= 'A' && Text[0] <= 'Z')  // when the string is a word with first capital letter
+            {
+                return IsWordOk();
+            }
+            return false;  // if not number and word with capital letter then false
         }
 
         /// <summary>
