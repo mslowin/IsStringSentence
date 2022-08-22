@@ -42,6 +42,21 @@ namespace IsStringSentence
         }
 
         /// <summary>
+        /// Checks if the sentence ending word is ok (ends with dot, exclamation mark or question mark).
+        /// </summary>
+        /// <returns>True if the ending word is ok, otherwise false.</returns>
+        public bool IsEndOk()
+        {
+            if (Text[^1] == '.' || Text[^1] == '!' || Text[^1] == '?')  // when the last character is . or ! or ? the end is ok
+            {
+                Console.WriteLine("End OK");
+                return true;
+            }
+            Console.WriteLine("End BAD");
+            return false;
+        }
+
+        /// <summary>
         /// Checks if the word is ok (has only letters or only numbers)
         /// word is ok when comma is at the end.
         /// </summary>
@@ -67,7 +82,7 @@ namespace IsStringSentence
         private static bool CheckIfWordOk(string word)
         {
             int okCounter = 0;
-            for (int i = 0; i < word.Length - 1; i++)
+            for (int i = 0; i < word.Length; i++)
             {
                 if (word[i] <= 'Z' && word[i] >= 'A' || word[i] <= 'z' && word[i] >= 'a')
                 {
@@ -91,7 +106,7 @@ namespace IsStringSentence
         private static bool CheckIfNumberOk(string word)
         {
             int okCounter = 0;
-            for (int i = 0; i < word.Length - 1; i++)
+            for (int i = 0; i < word.Length; i++)
             {
                 if (int.TryParse(word[i].ToString(), out _))
                 {

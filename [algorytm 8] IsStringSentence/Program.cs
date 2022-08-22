@@ -6,8 +6,11 @@
         {
             //Console.WriteLine("Input a string to see if it is a sentance.");
             //Console.ReadLine();
-            Word test = new Word("Hello,");
-            test.IsHeaderOk();
+            string message = "Hello, my name is Michal.";
+            Sentance testSentance = new(message);
+
+            //Word test = new Word("Hello");
+            //test.IsWordOk();
 
         }
     }
