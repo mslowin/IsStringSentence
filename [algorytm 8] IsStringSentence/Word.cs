@@ -49,10 +49,8 @@ namespace IsStringSentence
         {
             if (Text[^1] == '.' || Text[^1] == '!' || Text[^1] == '?')  // when the last character is . or ! or ? the end is ok
             {
-                Console.WriteLine("End OK");
                 return true;
             }
-            Console.WriteLine("End BAD");
             return false;
         }
 

@@ -40,5 +40,19 @@ namespace IsStringSentence
                 Words.Add(new Word(words[i]));
             }
         }
+
+        public bool IsSentanceOk()
+        {
+            int okCounter = 0;
+            if (Header!.IsHeaderOk() && End!.IsEndOk())
+            {
+                Words!.Where(word => word.IsWordOk()).ToList().ForEach(word => { okCounter++; });
+                if (okCounter == Words!.Count)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
