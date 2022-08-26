@@ -19,11 +19,11 @@
 
                     if (testSentance.IsSentanceOk())
                     {
-                        Console.WriteLine("String IS a sentance :)");
+                        Console.WriteLine("String IS a sentance :) \n");
                     }
                     else
                     {
-                        Console.WriteLine("String IS NOT a sentance :(");
+                        Console.WriteLine("String IS NOT a sentance :( \n");
                     }
                 }
                 else
